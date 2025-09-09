@@ -13,22 +13,32 @@ public class Main {
         System.out.println("Введите третий вес: ");
         double third = new Scanner(System.in).nextDouble();
 
-        double greatest = 0;
-        double average = 0;
-        double smallest = 0;
-        //todo дописать логику программы ниже.
-
-
-
-
-
-
-
-        //todo
-
-
-        System.out.println("Наибольший вес: " + 10);
-        System.out.println("Средний вес: " + 9);
-        System.out.println("Наименьший вес: " + 1);
+        double greatest = 1;
+        double average = 1;
+        double smallest = 1;
+        if (first > second && first > third) {
+            greatest = first;
+        } else if (second > first && second > third) {
+            greatest = second;
+        } else  {
+            greatest = third;
+        }
+        if ((first > second && second < third)||(first < second && first > third)) {
+            average = first;
+        } else if ((second > first && second < third)||(second < first && second > third)) {
+            average = second;
+        } else if ((third > first && third < second)||(third < first && third > second)) {
+            average = third;
+        }
+        if (first < second && first < third) {
+            smallest = first;
+        } else if (second < first && second < third) {
+            smallest = second;
+        } else if (third < first && third < second) {
+            smallest = third;
+        }
+        System.out.println("Наибольший вес: " + greatest);
+        System.out.println("Средний вес: " + average);
+        System.out.println("Наименьший вес: " + smallest);
     }
 }
