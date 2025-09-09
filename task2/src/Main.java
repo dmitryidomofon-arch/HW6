@@ -16,26 +16,14 @@ public class Main {
         double greatest = 1;
         double average = 1;
         double smallest = 1;
-        if (first > second && first > third) {
-            greatest = first;
-        } else if (second > first && second > third) {
-            greatest = second;
-        } else  {
-            greatest = third;
-        }
+        greatest = first > second && first > third ? first : second > third ? second : third;
+        smallest = first < second && first < third ? first : second < third ? second : third;
         if ((first > second && second < third)||(first < second && first > third)) {
             average = first;
         } else if ((second > first && second < third)||(second < first && second > third)) {
             average = second;
         } else if ((third > first && third < second)||(third < first && third > second)) {
             average = third;
-        }
-        if (first < second && first < third) {
-            smallest = first;
-        } else if (second < first && second < third) {
-            smallest = second;
-        } else if (third < first && third < second) {
-            smallest = third;
         }
         System.out.println("Наибольший вес: " + greatest);
         System.out.println("Средний вес: " + average);
